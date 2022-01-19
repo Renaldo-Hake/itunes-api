@@ -5,13 +5,20 @@ const express = require('express');
 const helmet = require("helmet");
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const routes = require('./routes');
 
 // initialize express
 const app = express();
 
+// secure app
 app.use(helmet());
+
+// connect to mongoDB
+const uri = 'mongodb+srv://admin:Password@hyperion-task.cwxa2.mongodb.net/test?retryWrites=true&w=majority'
+mongoose.connect
+
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }))
